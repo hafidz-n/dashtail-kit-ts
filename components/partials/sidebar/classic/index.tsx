@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Icon } from "@iconify/react";
 import { cn, isLocationMatch, getDynamicPath } from "@/lib/utils";
 import { useSidebar, useThemeStore } from "@/store";
 import SidebarLogo from "../common/logo";
@@ -152,6 +153,19 @@ const ClassicSidebar = ({ trans }: any) => {
           </div>
         )}
       </ScrollArea>
+      <div className={cn("px-4 py-4 flex justify-center", {
+        "justify-end": !collapsed,
+      })}>
+        <button
+          onClick={() => setCollapsed(!collapsed)}
+          className="h-8 w-8 rounded-full border border-default-300 flex items-center justify-center hover:bg-default-100 transition-all duration-200"
+        >
+          <Icon
+            icon={collapsed ? "heroicons:chevron-right" : "heroicons:chevron-left"}
+            className="h-5 w-5 text-default-600"
+          />
+        </button>
+      </div>
     </div>
   );
 };

@@ -108,7 +108,9 @@ const VerticalHeader = ({ handleOpenSearch }: any) => {
     );
   }
   if (sidebarType === "classic") {
-    menuBarContent = null;
+    menuBarContent = (
+      <MenuBar collapsed={collapsed} setCollapsed={setCollapsed} />
+    );
   }
   if (subMenu && isDesktop) {
     menuBarContent = null;
